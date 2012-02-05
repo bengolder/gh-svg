@@ -4,7 +4,7 @@
 
 __gh-svg__ is a plugin for exporting [svg](http://www.w3.org/Graphics/SVG/) data from the [Grasshopper](http://grasshopper3d.com) and
 [Rhino](http://www.rhino3d.com/) 3D modeling environments. The intent is work towards create greater
-interopoerability between different geometry editing softwares using open-source data
+interoperability between different geometry editing softwares using open-source data
 format standards, as well as making it easier to create dynamic interfaces
 for topics that rely heavily on illustration and geomtry, such as architecture,
 urban design, industrial design, and data visualization.
