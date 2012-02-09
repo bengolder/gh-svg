@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<circle stroke="#FF0000" cx="50" r="10" cy="20" fill="#0A0A0A" />
+<circle cx="30" cy="70" r="15" fill="black" />
+</svg>
