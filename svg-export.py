@@ -1,5 +1,11 @@
-#import Rhino
-#import scriptcontext
+try:
+    import Rhino
+    import scriptcontext
+    import System
+    GH=True
+except:
+    GH=False
+
 '''This module is currently just a rough shot for sketching out ideas about svg
 export.'''
 
@@ -46,9 +52,24 @@ def test():
     c = svgCircle(30, 70, 15)
     return svg_wrap(c1,c.render())
 
+if GH:
+    if points and fills and radii:
+        circs = []
+        for i, p in enumerate(points):
+            c = svgCircle(p.X, p.Y, radii[i])
+            color = fills[i]
+            hex_color = System.Drawing.ColorTranslator.ToHtml(color)
+            c.fill = hex_color
+            circs.append(c)
+        svgs = [n.render() for n in circs]
+        a = svg_wrap(*svgs)
 
-if __name__=='__main__':
+
+
+if __name__ == '__main__':
     f = open('test.svg', 'w')
     f.write(test())
     f.close()
+
+
 
