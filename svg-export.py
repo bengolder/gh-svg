@@ -106,5 +106,3 @@ if GH:
         for i, p in enumerate(polylines):
             outlist.append(polylineToPath(vp, p, colors[i]))
         a = svg_wrap(*outlist)
-
-
