@@ -6,7 +6,7 @@ __gh-svg__ is a plugin for exporting [svg](http://www.w3.org/Graphics/SVG/) data
 [Rhino](http://www.rhino3d.com/) 3D modeling environments. The intent is work towards create greater
 interoperability between different geometry editing softwares using open-source data
 format standards, as well as making it easier to create dynamic interfaces
-for topics that rely heavily on illustration and geomtry, such as architecture,
+for topics that rely heavily on illustration and geometry, such as architecture,
 urban design, industrial design, and data visualization.
 
 
@@ -40,8 +40,4 @@ Here’s why I think SVG is a good file format to export to:
 2. SVG can be easily read and edited by most vector editing software, including Adobe Illustrator and many open source softwares.
 style information can be easily embedded in the geometry, or can be adjusted with a style sheet
 3. SVG is dynamic. This means I can create geometry with Rhino with embedded hypertext links, or I can use Javascript to display information when someone hovers their mouse over the geometry.
-4. You could probably make some really neat stuff if you combined it with
-   something like [d3.js](http://mbostock.github.com/d3/). For example, you
-   could create a display the reads attributes embedded into the geometry and
-   displays them to the user when they mouse over something.
 
