@@ -89,20 +89,13 @@ def test():
     return svg_wrap(c1,c.render())
 
 if GH:
-    #if points and fills and radii:
-        #circs = []
-        #for i, p in enumerate(points):
-            #c = svgCircle(p.X, p.Y, radii[i])
-            #color = fills[i]
-            #hex_color = System.Drawing.ColorTranslator.ToHtml(color)
-            #c.fill = hex_color
-            #circs.append(c)
-        #svgs = [n.render() for n in circs]
-        #a = svg_wrap(*svgs)
-
-    if polylines and render:
-        outlist = []
-        vp = scriptcontext.doc.Views.ActiveView.ActiveViewport
-        for i, p in enumerate(polylines):
-            outlist.append(polylineToPath(vp, p, colors[i]))
-        a = svg_wrap(*outlist)
+    if points and fills and radii:
+        circs = []
+        for i, p in enumerate(points):
+            c = svgCircle(p.X, p.Y, radii[i])
+            color = fills[i]
+            hex_color = System.Drawing.ColorTranslator.ToHtml(color)
+            c.fill = hex_color
+            circs.append(c)
+        svgs = [n.render() for n in circs]
+        a = svg_wrap(*svgs)
