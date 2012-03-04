@@ -101,42 +101,22 @@ def html_wrap(svg, title='Grasshopper Export', css='', js=''):
 </html>'''
     return wrapper % (title, css, svg_wrap(*svg), js)
 
-def parse_attribute_input(attributes):
-    '''checks the incoming attribute inputs and converts
-    them to dictionaries'''
-    sample = attributes[0]
-    if isinstance(sample, basestring):
-        # deal with the string
-        pass
-    else:
-        return attributes
-
-def test():
-    c1 = to_svg(tag='circle', r='10', cx=50, cy=20,
-             stroke='#FF0000', fill='#0A0A0A')
-    c = svgCircle(30, 70, 15)
-    return svg_wrap(c1,c.render())
 
 if GH:
     '''This part only runs if this code is pasted in a Grasshopper python
     component.
-    Inputs
-        export = A boolean switch to run the code (in case it's heavy)
-        path = an optional file path to export to
-        geometries = a geometry tree of stuff to turn into svg
-        viewport = the view to export from (default is current viewport)
-        attributes = optional list of key/value pairs to embed in the geometry
-                        attributes can be python dictionaries
-                        or they can be strings. One dictionary or string
-                        is matched to one geometry.
     '''
-    if points and fills and radii:
-        circs = []
-        for i, p in enumerate(points):
-            c = svgCircle(p.X, p.Y, radii[i])
-            color = fills[i]
-            hex_color = System.Drawing.ColorTranslator.ToHtml(color)
-            c.fill = hex_color
-            circs.append(c)
-        svgs = [n.render() for n in circs]
-        a = svg_wrap(*svgs)
+    if geometry and create_svg:
+        # run the script
+        if attribute_dictionaries:
+            # unwrap the attribute dictionaries, just get their normal
+            # dictionaries
+            atts = [a.d for a in attribute_dictionaries]
+        else:
+            atts = []
+        if not viewport:
+            viewport = scriptcontext.doc.Views.ActiveView.ActiveViewport
+
+
+
+
