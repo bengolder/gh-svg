@@ -81,6 +81,35 @@ def svg_wrap(*args):
 </svg>'''
     return wrapper % '\n'.join(args)
 
+def html_wrap(svg, title='Grasshopper Export', css='', js=''):
+    wrapper = '''
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>%s</title>
+        <style type="text/css">
+        %s
+        </style>
+    </head>
+    <body>
+        <div id="container">
+        %s
+        </div>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>'''
+    return wrapper % (title, css, svg_wrap(*svg), js)
+
+def parse_attribute_input(attributes):
+    '''checks the incoming attribute inputs and converts
+    them to dictionaries'''
+    sample = attributes[0]
+    if isinstance(sample, basestring):
+        # deal with the string
+        pass
+    else:
+        return attributes
 
 def test():
     c1 = to_svg(tag='circle', r='10', cx=50, cy=20,
@@ -89,6 +118,18 @@ def test():
     return svg_wrap(c1,c.render())
 
 if GH:
+    '''This part only runs if this code is pasted in a Grasshopper python
+    component.
+    Inputs
+        export = A boolean switch to run the code (in case it's heavy)
+        path = an optional file path to export to
+        geometries = a geometry tree of stuff to turn into svg
+        viewport = the view to export from (default is current viewport)
+        attributes = optional list of key/value pairs to embed in the geometry
+                        attributes can be python dictionaries
+                        or they can be strings. One dictionary or string
+                        is matched to one geometry.
+    '''
     if points and fills and radii:
         circs = []
         for i, p in enumerate(points):
