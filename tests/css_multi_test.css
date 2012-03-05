@@ -1,0 +1,41 @@
+path {
+  stroke-width: 0;
+}
+
+#area_9 {
+  fill: #000;
+}
+
+.big {
+  fill: #D6E265;
+}
+.biggish {
+  fill: #A5D36C;
+}
+.medium {
+  fill: #7AC275;
+}
+.smallish {
+  fill: #54B07C;
+}
+.small {
+  fill: #379B81;
+}
+
+path:hover {
+  fill: #FF0073 !important;
+}
+
+#panel {
+  position: fixed;
+  background-color: #000;
+  color: #fff;
+  width: 300px;
+  padding: 6px;
+  z-index: 3;
+  opacity: 0.8;
+}
+.hide {
+  display:none;
+}
+
