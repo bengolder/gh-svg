@@ -15,7 +15,16 @@ Here's an [example](http://benjamingolder.com/static/files/dynamic_example.html)
 
 ## The Current State of this Software
 
-_Fabruary 27th, 2012 ---_ I've now created some simple Dot and Polyline export
+_March 7th, 2012 ---_ The export now supports arbitrary attributes, giving priority to ids and classes. I tested the attributes to see how well they
+could handle unicode text, just to be sure it wasn't creating another little ascii unicode death trap.
+I created a component for inputting css,
+javascript, and wrapping everything in html. I'm still not sure how NURBS
+curves should be handled, but for now it will default to approximating them
+with polylines to an input tolerance (which seems to work pretty well for
+illustration purposes). The whole thing runs pretty slow. It seemed to break
+down when writing only about 884 moderately complex polylines.
+
+_February 27th, 2012 ---_ I've now created some simple Dot and Polyline export
 examples. They are a little slow, but they work fine.
 
 _February 5th, 2012 ---_ I just made this repository for the project, and expect to
@@ -27,10 +36,10 @@ project, please 'watch' it here on Github.
 
 * Point/Dot Export (Done!)
 * Polylines Export (Done!)
-* Viewport Projection (Done for points and polylines)
-* Embedding arbitrary attributes
-* Viewport Selection
-* Curve Export
+* Viewport Projection (Done!)
+* Embedding arbitrary attributes (Done!)
+* Viewport Selection (ok, soon)
+* Curve Export (no beziers yet, but polyline approximation works)
 
 ## But why?
 
