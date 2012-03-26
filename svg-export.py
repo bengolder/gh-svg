@@ -9,6 +9,16 @@ except:
 '''This module is currently just a rough shot for sketching out ideas about svg
 export.'''
 
+
+FEATURE_TRANSLATOR = (
+        'Point', 'Point3d'
+        'MultiPoint', 'Point3d'
+        'LineString', 'Curve', 'Polyline'
+        'MultiLineString','Curve', 'Polyline'
+        'Polygon',
+        'MultiPolygon',
+        )
+
 def conversion_lookup(g):
     if isinstance(g, Rhino.Geometry.Point3d):
         return to_svg_point
