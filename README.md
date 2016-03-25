@@ -2,6 +2,8 @@
 
 ---
 
+Note: This code is no longer under active development. See below for more details.
+
 __gh-svg__ is a plugin for exporting [svg](http://www.w3.org/Graphics/SVG/) data from the [Grasshopper](http://grasshopper3d.com) and
 [Rhino](http://www.rhino3d.com/) 3D modeling environments. The intent is work towards create greater
 interoperability between different geometry editing softwares using open-source data
@@ -15,6 +17,8 @@ And another [example](http://benjamingolder.com/static/files/bcn_example.html).
 
 
 ## The Current State of this Software
+
+_March 26, 2016 ---_ I haven't worked on this code for years. This project has been abondoned. It was a neat experiment, but was a clunky implementation and is likely obselete today. Others have written better implementations. For example, [the decodes library](http://decod.es/) includes [an svg io module](https://github.com/ksteinfe/decodes/blob/master/decodes/io/svg_out.py). 
 
 _March 7th, 2012 ---_ The export now supports arbitrary attributes, giving priority to ids and classes. I tested the attributes to see how well they
 could handle unicode text, just to be sure it wasn't creating another little ascii unicode death trap.
